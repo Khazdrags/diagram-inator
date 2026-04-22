@@ -1,3 +1,4 @@
+import BedrockNode from "./BedrockNode";
 import DefaultNode from "./DefaultNode";
 import EC2Node from "./EC2Node";
 import ServiceNode from "./ServiceNode";
@@ -10,4 +11,5 @@ export const nodeTypes = {
   default: DefaultNode,
   service: ServiceNode,
   ec2: EC2Node,
+  bedrock: BedrockNode,
 };

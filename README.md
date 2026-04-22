@@ -1,10 +1,11 @@
 # Diagram-inator
 
-> *Behold, the **Diagram-inator!*** 
+> \*Behold, the **Diagram-inator!\***
 
 Lightweight visual editor for infrastructure-style diagrams, built with React and XY Flow. Yes, it has a button that does something. No, it doesn't come with a self-destruct mechanism. **Yet.**
 
 ![Screenshot](./docs/images/example1.png)
+![Screenshot](./docs/images/example2.png)
 
 ---
 
@@ -36,12 +37,12 @@ The app runs locally at `http://localhost:5173` (default Vite port).
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
 | `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+| `npm run lint`    | Run ESLint               |
 
 ## Project Structure
 

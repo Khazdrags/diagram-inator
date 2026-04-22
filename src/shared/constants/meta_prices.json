@@ -1,0 +1,106 @@
+[
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3 70B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00265,
+    "outputPrice": 0.0035
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3 8B",
+    "unit": "1K tokens",
+    "inputPrice": 0.0003,
+    "outputPrice": 0.0006
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.1 405B",
+    "unit": "1K tokens",
+    "inputPrice": 0.0012,
+    "outputPrice": 0.0012
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.1 70B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00072,
+    "outputPrice": 0.00072
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.1 70B Latency Optimized",
+    "unit": "1K tokens",
+    "inputPrice": 0.0009,
+    "outputPrice": 0.0009
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.1 8B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00022,
+    "outputPrice": 0.00022
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.2 11B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00016,
+    "outputPrice": 0.00016
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.2 1B",
+    "unit": "1K tokens",
+    "inputPrice": 0.0001,
+    "outputPrice": 0.0001
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.2 3B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00015,
+    "outputPrice": 0.00015
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.2 90B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00072,
+    "outputPrice": 0.00072
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 3.3 70B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00036,
+    "outputPrice": 0.00036
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 4 Maverick 17B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00012,
+    "outputPrice": 0.00097
+  },
+  {
+    "provider": "Meta",
+    "regionCode": "us-east-1",
+    "model": "Llama 4 Scout 17B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00017,
+    "outputPrice": 0.00033
+  }
+]

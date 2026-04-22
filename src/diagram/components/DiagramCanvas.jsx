@@ -26,6 +26,14 @@ const NODE_DEFAULTS = {
     size: "micro",
     hours: 24,
   }),
+  bedrock: (id) => ({
+    name: `Bedrock Model ${id}`,
+    provider: "",
+    model: "",
+    messageCount: 10000,
+    avgInputTokens: 500,
+    avgOutputTokens: 200,
+  }),
 };
 
 function DiagramCanvasInner() {

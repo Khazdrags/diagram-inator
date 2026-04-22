@@ -72,6 +72,13 @@
   min-height: auto;
 }
 
+.diagram-canvas-wrapper .react-flow__node-bedrock {
+  width: min(320px, 75vw);
+  min-width: min(320px, 75vw);
+  max-width: min(320px, 75vw);
+  min-height: auto;
+}
+
 .diagram-node {
   width: 100%;
   min-height: 100%;

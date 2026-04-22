@@ -1,0 +1,34 @@
+[
+  {
+    "provider": "OpenAI",
+    "regionCode": "us-east-1",
+    "model": "GPT OSS Safeguard 120B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00015,
+    "outputPrice": 0.0003
+  },
+  {
+    "provider": "OpenAI",
+    "regionCode": "us-east-1",
+    "model": "GPT OSS Safeguard 20B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00007,
+    "outputPrice": 0.00035
+  },
+  {
+    "provider": "OpenAI",
+    "regionCode": "us-east-1",
+    "model": "gpt-oss-120b",
+    "unit": "1K tokens",
+    "inputPrice": 0.00015,
+    "outputPrice": 0.0003
+  },
+  {
+    "provider": "OpenAI",
+    "regionCode": "us-east-1",
+    "model": "gpt-oss-20b",
+    "unit": "1K tokens",
+    "inputPrice": 0.0001225,
+    "outputPrice": 0.0003
+  }
+]
