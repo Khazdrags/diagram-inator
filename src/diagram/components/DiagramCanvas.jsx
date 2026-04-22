@@ -19,6 +19,13 @@ import { edgeTypes } from "./edgeTypes";
 const NODE_DEFAULTS = {
   default: (id) => ({ name: `Node ${id}` }),
   service: (id) => ({ name: "Service", language: "nodejs", id }),
+  ec2: (id) => ({
+    name: `EC2 Instance ${id}`,
+    os: "Amazon Linux 2",
+    family: "t3",
+    size: "micro",
+    hours: 24,
+  }),
 };
 
 function DiagramCanvasInner() {

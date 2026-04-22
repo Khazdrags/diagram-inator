@@ -65,6 +65,13 @@
   min-height: var(--diagram-node-height);
 }
 
+.diagram-canvas-wrapper .react-flow__node-ec2 {
+  width: min(300px, 75vw);
+  min-width: min(300px, 75vw);
+  max-width: min(300px, 75vw);
+  min-height: auto;
+}
+
 .diagram-node {
   width: 100%;
   min-height: 100%;

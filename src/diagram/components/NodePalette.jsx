@@ -104,6 +104,15 @@ export default function NodePalette({ onDropNode }) {
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <DraggableNode
+          label="EC2 Instance"
+          caption="AWS compute instance with pricing"
+          type="ec2"
+          onDropNode={onDropNode}
+        />
+      </Box>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <DraggableNode
           label="Default node"
           caption="Press, drag and release over canvas"
           type="default"
