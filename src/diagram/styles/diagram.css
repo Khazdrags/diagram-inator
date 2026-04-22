@@ -1,0 +1,117 @@
+.diagram-page-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  height: calc(100vh - 96px);
+}
+
+.diagram-canvas-wrapper {
+  flex: 1;
+  min-height: 360px;
+  border: 1px solid var(--mui-palette-divider);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.diagram-canvas-wrapper .react-flow {
+  --xy-node-background-color-default: color-mix(
+    in srgb,
+    var(--mui-palette-background-paper, #181818) 72%,
+    transparent
+  );
+  --xy-node-color-default: var(--mui-palette-text-primary, #ffffff);
+  --xy-node-border-default: 1px solid
+    color-mix(in srgb, var(--mui-palette-divider, #4d4d4d) 78%, #ffffff);
+  --xy-controls-button-background-color-default: var(
+    --mui-palette-background-paper,
+    #181818
+  );
+  --xy-controls-button-color-default: var(--mui-palette-text-primary, #ffffff);
+  --xy-controls-button-border-color-default: var(
+    --mui-palette-divider,
+    #4d4d4d
+  );
+  --xy-background-pattern-dots-color-default: color-mix(
+    in srgb,
+    var(--mui-palette-text-secondary, #b3b3b3) 45%,
+    transparent
+  );
+}
+
+.diagram-canvas-wrapper .react-flow__node {
+  background: var(--xy-node-background-color-default);
+  border: var(--xy-node-border-default);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.service-node {
+  min-width: 180px;
+  padding: 8px 12px;
+}
+
+.service-node .MuiTextField-root,
+.service-node .MuiSelect-root {
+  font-size: 12px;
+}
+
+.service-node .MuiInput-root::before,
+.service-node .MuiInput-root::after {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  .diagram-page-layout {
+    flex-direction: column;
+    height: calc(100vh - 88px);
+  }
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  border-radius: 4px;
+  background: #ffffff6e;
+}
+
+.react-flow__handle:hover {
+  background: #fff;
+}
+
+.react-flow__handle.connecting {
+  background: orange;
+}
+
+.react-flow__handle.valid {
+  background: #22c55e;
+}
+
+/* Edge Toolbar Styles */
+.edge-toolbar {
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.edge-toolbar .MuiIconButton-root {
+  transition: all 0.15s ease-in-out;
+}
+
+.edge-toolbar .MuiIconButton-root:focus-visible {
+  outline: 2px solid var(--mui-palette-primary-main, #1976d2);
+  outline-offset: 2px;
+}
