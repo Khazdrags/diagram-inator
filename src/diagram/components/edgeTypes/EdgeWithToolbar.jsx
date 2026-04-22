@@ -14,21 +14,54 @@ import {
   Trash2,
 } from "lucide-react";
 
-const markerConfigs = {
+const EDGE_DEFAULT_COLOR = "#888";
+
+const EDGE_COLOR_OPTIONS = [
+  "#888",
+  "#1ed760",
+  "#2f80ed",
+  "#f2994a",
+  "#eb5757",
+  "#bb6bd9",
+  "#f2c94c",
+  "#ffffff",
+];
+
+const getMarkerConfigs = (edgeColor) => ({
   none: { markerStart: undefined, markerEnd: undefined },
   start: {
-    markerStart: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
+    markerStart: {
+      type: "arrowclosed",
+      width: 10,
+      height: 10,
+      color: edgeColor,
+    },
     markerEnd: undefined,
   },
   end: {
     markerStart: undefined,
-    markerEnd: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
+    markerEnd: {
+      type: "arrowclosed",
+      width: 10,
+      height: 10,
+      color: edgeColor,
+    },
   },
   both: {
-    markerStart: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
-    markerEnd: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
+    markerStart: {
+      type: "arrowclosed",
+      width: 10,
+      height: 10,
+      color: edgeColor,
+    },
+    markerEnd: {
+      type: "arrowclosed",
+      width: 10,
+      height: 10,
+      color: edgeColor,
+    },
   },
-};
+});
 
 const markerLabels = {
   none: "None",
@@ -71,8 +104,10 @@ export default function EdgeWithToolbar({
 
   const isToolbarVisible = isHovering || selected;
 
+  const currentEdgeColor = style?.stroke || EDGE_DEFAULT_COLOR;
+
   const handleMarkerChange = (markerType) => {
-    const config = markerConfigs[markerType];
+    const config = getMarkerConfigs(currentEdgeColor)[markerType];
     setEdges((eds) =>
       eds.map((edge) =>
         edge.id === id
@@ -83,6 +118,36 @@ export default function EdgeWithToolbar({
             }
           : edge,
       ),
+    );
+  };
+
+  const handleColorChange = (nextColor) => {
+    setEdges((eds) =>
+      eds.map((edge) => {
+        if (edge.id !== id) {
+          return edge;
+        }
+
+        return {
+          ...edge,
+          style: {
+            ...edge.style,
+            stroke: nextColor,
+          },
+          markerStart: edge.markerStart
+            ? {
+                ...edge.markerStart,
+                color: nextColor,
+              }
+            : edge.markerStart,
+          markerEnd: edge.markerEnd
+            ? {
+                ...edge.markerEnd,
+                color: nextColor,
+              }
+            : edge.markerEnd,
+        };
+      }),
     );
   };
 
@@ -127,7 +192,7 @@ export default function EdgeWithToolbar({
     <>
       <BaseEdge
         path={edgePath}
-        style={style}
+        style={{ ...style, stroke: currentEdgeColor }}
         markerStart={markerStart}
         markerEnd={markerEnd}
       />
@@ -175,6 +240,61 @@ export default function EdgeWithToolbar({
                   </Button>
                 </Tooltip>
               ))}
+
+              <Box
+                sx={{
+                  width: 1,
+                  height: 20,
+                  backgroundColor: "divider",
+                  mx: 0.5,
+                }}
+              />
+
+              <Box sx={{ display: "flex", gap: 0.5, alignItems: "center" }}>
+                {EDGE_COLOR_OPTIONS.map((color) => {
+                  const isActiveColor =
+                    color.toLowerCase() === currentEdgeColor.toLowerCase();
+
+                  return (
+                    <Tooltip key={color} title={`Color ${color}`}>
+                      <Button
+                        size="small"
+                        onClick={() => handleColorChange(color)}
+                        variant="outlined"
+                        sx={{
+                          minWidth: "unset",
+                          width: 22,
+                          height: 22,
+                          p: 0,
+                          borderRadius: "9999px",
+                          borderColor: isActiveColor
+                            ? "primary.main"
+                            : "divider",
+                          backgroundColor: color,
+                          boxShadow:
+                            color === "#ffffff"
+                              ? "inset 0 0 0 1px rgba(0,0,0,0.2)"
+                              : "none",
+                          "&:hover": {
+                            borderColor: "primary.main",
+                            opacity: 0.9,
+                          },
+                        }}
+                        aria-label={`Set edge color: ${color}`}
+                      />
+                    </Tooltip>
+                  );
+                })}
+              </Box>
+
+              <Box
+                sx={{
+                  width: 1,
+                  height: 20,
+                  backgroundColor: "divider",
+                  mx: 0.5,
+                }}
+              />
 
               <Tooltip title="Delete connection">
                 <Button
