@@ -1,6 +1,8 @@
 # Diagram-inator
 
-> Lightweight visual editor for infrastructure-style diagrams, built with React and XY Flow.
+> *Behold, the **Diagram-inator!*** 
+
+Lightweight visual editor for infrastructure-style diagrams, built with React and XY Flow. Yes, it has a button that does something. No, it doesn't come with a self-destruct mechanism. **Yet.**
 
 ![Screenshot](./docs/images/example1.png)
 
@@ -19,8 +21,9 @@
 
 ## Overview
 
-Diagram-inator is a small web app focused on creating node-based diagrams with a clean, modern UI.
-It includes a dedicated diagram page, reusable node/edge types, and EC2-oriented context/data helpers.
+Diagram-inator is a small web app for creating node-based diagrams with a clean, modern UI — inspired by the naming conventions of a certain Tri-State Area supervillain. It includes a dedicated diagram page, reusable node/edge types, and EC2-oriented context/data helpers.
+
+Unlike Doofenshmirtz's inventions, this one actually works as intended.
 
 ## Quick Start
 
@@ -51,4 +54,4 @@ src/
 
 ## License
 
-MIT
+MIT — Perry the Platypus not included.
