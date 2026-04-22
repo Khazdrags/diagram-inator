@@ -142,11 +142,24 @@ export const DATABASES_CONFIG = {
   },
 };
 
+// ─── AWS Services ─────────────────────────────────────────────
+export const AWS_SERVICES_CONFIG = {
+  bedrock: {
+    label: "Amazon Bedrock",
+    icon: "https://unpkg.com/aws-icons@latest/icons/architecture-service/AmazonBedrock.svg",
+  },
+  s3: {
+    label: "Amazon S3",
+    icon: "https://unpkg.com/aws-icons@latest/icons/architecture-service/AmazonSimpleStorageService.svg",
+  },
+};
+
 export const SERVICE_TECH_CONFIG = {
   ...LANGUAGES_CONFIG,
   ...FRONTEND_FRAMEWORKS_CONFIG,
   ...BACKEND_FRAMEWORKS_CONFIG,
   ...DATABASES_CONFIG,
+  ...AWS_SERVICES_CONFIG,
 };
 
 export const SERVICE_TECH_GROUPS = [
@@ -154,4 +167,5 @@ export const SERVICE_TECH_GROUPS = [
   { label: "Frontend Frameworks", options: FRONTEND_FRAMEWORKS_CONFIG },
   { label: "Backend Frameworks", options: BACKEND_FRAMEWORKS_CONFIG },
   { label: "Databases", options: DATABASES_CONFIG },
+  { label: "AWS Services", options: AWS_SERVICES_CONFIG },
 ];
