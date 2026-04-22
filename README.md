@@ -1,16 +1,53 @@
-# React + Vite
+# Diagram-inator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lightweight visual editor for infrastructure-style diagrams, built with React and XY Flow.
 
-Currently, two official plugins are available:
+![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/React-19.x-61DAFB?logo=react&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+Diagram-inator is a small web app focused on creating node-based diagrams with a clean, modern UI.
+It includes a dedicated diagram page, reusable node/edge types, and EC2-oriented context/data helpers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Quick Start
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The app runs locally at `http://localhost:5173` (default Vite port).
+
+## Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+```
+
+## Tech Stack
+
+- React 19
+- Vite 8
+- XY Flow
+- Material UI
+- React Router
+
+## Screenshot
+
+```md
+![Diagram-inator Screenshot](./docs/example1.png)
+```
+
+## Project Structure
+
+```text
+src/
+	diagram/   # Diagram editor, node/edge types, canvas
+	home/      # Landing/home view
+	shared/    # Router, theme, shared components/constants
+```
