@@ -40,7 +40,7 @@ npm run lint     # Run ESLint
 ## Screenshot
 
 ```md
-![Diagram-inator Screenshot](./docs/example1.png)
+![Diagram-inator Screenshot](./docs/images/example1.png)
 ```
 
 ## Project Structure
