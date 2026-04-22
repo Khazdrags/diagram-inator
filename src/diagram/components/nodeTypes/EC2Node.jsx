@@ -56,6 +56,22 @@ const selectSx = {
   "&:after": { borderBottomColor: "#1ed760" },
 };
 
+const infoCardSx = {
+  bgcolor: "rgba(255,255,255,0.04)",
+  borderRadius: "6px",
+  p: "8px 10px",
+  mb: "10px",
+};
+
+const totalCardSx = {
+  bgcolor: "rgba(30, 215, 96, 0.08)",
+  borderRadius: "6px",
+  p: "8px 10px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+};
+
 export default function EC2Node({ data, isConnectable, id }) {
   const { setNodes } = useReactFlow();
   const { families, sizesByFamily, loading } = useEC2Data();
@@ -153,7 +169,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       ))}
 
       {/* ── Header: icon + editable name ── */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "4px" }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "6px" }}>
         <img
           src={EC2Icon}
           alt="EC2"
@@ -187,7 +203,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── OS ── */}
-      <Box sx={{ mb: "4px" }}>
+      <Box sx={{ mb: "6px" }}>
         <Typography sx={labelSx}>OS</Typography>
         <Select
           className="nodrag nopan"
@@ -207,7 +223,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Instance type (family) ── */}
-      <Box sx={{ mb: "4px" }}>
+      <Box sx={{ mb: "6px" }}>
         <Typography sx={labelSx}>Type</Typography>
         {loading ? (
           <Box
@@ -238,7 +254,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Size ── */}
-      <Box sx={{ mb: "4px" }}>
+      <Box sx={{ mb: "10px" }}>
         <Typography sx={labelSx}>Size</Typography>
         <Select
           className="nodrag nopan"
@@ -282,7 +298,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Hours/day slider ── */}
-      <Box sx={{ mb: "2px" }}>
+      <Box sx={{ mb: "10px" }}>
         <Box
           sx={{
             display: "flex",
@@ -329,35 +345,44 @@ export default function EC2Node({ data, isConnectable, id }) {
         />
       </Box>
 
-      {/* ── Monthly total ── */}
-      <Box
-        sx={{
-          pt: "8px",
-          mt: "2px",
-          borderTop: "1px solid",
-          borderColor: "divider",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "baseline",
-        }}
-      >
+      {/* ── Price summary ── */}
+      <Box sx={infoCardSx}>
         <Typography
           sx={{
             fontSize: "10px",
             color: "#b3b3b3",
             textTransform: "uppercase",
             letterSpacing: "1px",
+            mb: "6px",
           }}
         >
-          30-day total
+          Price summary
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+          }}
+        >
+          <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
+            On-demand ({os})
+          </Typography>
+          <Typography
+            sx={{ fontSize: "13px", fontWeight: 700, color: "#1ed760" }}
+          >
+            {pricePerHour === null ? "—" : `$${pricePerHour.toFixed(4)}/hr`}
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* ── Monthly total ── */}
+      <Box sx={totalCardSx}>
+        <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
+          Total cost (30 days)
         </Typography>
         <Typography
-          sx={{
-            fontSize: "20px",
-            fontWeight: 700,
-            color: "#1ed760",
-            lineHeight: 1,
-          }}
+          sx={{ fontSize: "15px", fontWeight: 800, color: "#1ed760" }}
         >
           {total30 === null ? "—" : `$${total30.toFixed(2)}`}
         </Typography>

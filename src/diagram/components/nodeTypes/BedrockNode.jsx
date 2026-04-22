@@ -69,6 +69,22 @@ const resultRowSx = {
 const resultLabelSx = { fontSize: "11px", color: "#b3b3b3" };
 const resultValueSx = { fontSize: "13px", fontWeight: 700, color: "#1ed760" };
 
+const infoCardSx = {
+  bgcolor: "rgba(255,255,255,0.04)",
+  borderRadius: "6px",
+  p: "8px 10px",
+  mb: "10px",
+};
+
+const totalCardSx = {
+  bgcolor: "rgba(30, 215, 96, 0.08)",
+  borderRadius: "6px",
+  p: "8px 10px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "baseline",
+};
+
 // ── Component ────────────────────────────────────────────────────────────────
 
 export default function BedrockNode({ data, isConnectable, id }) {
@@ -235,14 +251,7 @@ export default function BedrockNode({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Block A: Price per 1M tokens ── */}
-      <Box
-        sx={{
-          bgcolor: "rgba(255,255,255,0.04)",
-          borderRadius: "6px",
-          p: "8px 10px",
-          mb: "10px",
-        }}
-      >
+      <Box sx={infoCardSx}>
         <Typography
           sx={{
             fontSize: "10px",
@@ -369,14 +378,7 @@ export default function BedrockNode({ data, isConnectable, id }) {
       </Box>
 
       {/* Total cost */}
-      <Box
-        sx={{
-          bgcolor: "rgba(30, 215, 96, 0.08)",
-          borderRadius: "6px",
-          p: "8px 10px",
-          ...resultRowSx,
-        }}
-      >
+      <Box sx={totalCardSx}>
         <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
           Total cost
         </Typography>
