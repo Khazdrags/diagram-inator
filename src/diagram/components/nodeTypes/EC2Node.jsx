@@ -30,7 +30,10 @@ const OS_TO_PLATFORMS = {
   "Red Hat": ["Red Hat Enterprise Linux", "RHEL", "Linux/UNIX"],
 };
 
-const normalizePlatform = (value) => String(value ?? "").trim().toLowerCase();
+const normalizePlatform = (value) =>
+  String(value ?? "")
+    .trim()
+    .toLowerCase();
 
 const labelSx = {
   fontSize: "10px",
