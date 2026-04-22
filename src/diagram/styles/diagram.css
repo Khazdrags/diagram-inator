@@ -14,6 +14,13 @@
 }
 
 .diagram-canvas-wrapper .react-flow {
+  --diagram-node-width: min(360px, 75vw);
+  --diagram-node-height: 110px;
+  --diagram-node-padding: 8px 12px;
+  --diagram-node-handle-color: #ffffff6e;
+  --diagram-node-handle-color-hover: #fff;
+  --diagram-node-handle-color-connecting: orange;
+  --diagram-node-handle-color-valid: #22c55e;
   --xy-node-background-color-default: color-mix(
     in srgb,
     var(--mui-palette-background-paper, #181818) 72%,
@@ -50,18 +57,41 @@
   font-weight: 600;
 }
 
-.service-node {
-  min-width: 180px;
-  padding: 8px 12px;
+.diagram-canvas-wrapper .react-flow__node-default,
+.diagram-canvas-wrapper .react-flow__node-service {
+  width: var(--diagram-node-width);
+  min-width: var(--diagram-node-width);
+  max-width: var(--diagram-node-width);
+  min-height: var(--diagram-node-height);
+}
+
+.diagram-node {
+  width: 100%;
+  min-height: 100%;
+  padding: var(--diagram-node-padding);
+  box-sizing: border-box;
+}
+
+.service-node,
+.default-node {
+  width: 100%;
+}
+
+.default-node {
+  display: flex;
+  align-items: center;
 }
 
 .service-node .MuiTextField-root,
+.default-node .MuiTextField-root,
 .service-node .MuiSelect-root {
   font-size: 12px;
 }
 
 .service-node .MuiInput-root::before,
-.service-node .MuiInput-root::after {
+.service-node .MuiInput-root::after,
+.default-node .MuiInput-root::before,
+.default-node .MuiInput-root::after {
   border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -76,19 +106,19 @@
   width: 10px;
   height: 10px;
   border-radius: 4px;
-  background: #ffffff6e;
+  background: var(--diagram-node-handle-color);
 }
 
 .react-flow__handle:hover {
-  background: #fff;
+  background: var(--diagram-node-handle-color-hover);
 }
 
 .react-flow__handle.connecting {
-  background: orange;
+  background: var(--diagram-node-handle-color-connecting);
 }
 
 .react-flow__handle.valid {
-  background: #22c55e;
+  background: var(--diagram-node-handle-color-valid);
 }
 
 /* Edge Toolbar Styles */

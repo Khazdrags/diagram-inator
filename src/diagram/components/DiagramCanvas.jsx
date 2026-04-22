@@ -17,7 +17,7 @@ import { edgeTypes } from "./edgeTypes";
 
 /** Default data factory per node type */
 const NODE_DEFAULTS = {
-  default: (id) => ({ label: `Node ${id}` }),
+  default: (id) => ({ name: `Node ${id}` }),
   service: (id) => ({ name: "Service", language: "nodejs", id }),
 };
 

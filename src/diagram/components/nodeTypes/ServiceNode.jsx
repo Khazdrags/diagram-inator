@@ -1,10 +1,12 @@
 import { Box, TextField, Select, MenuItem, ListSubheader } from "@mui/material";
-import { Handle, Position, useReactFlow } from "@xyflow/react";
+import { Handle, useReactFlow } from "@xyflow/react";
+import PropTypes from "prop-types";
 import { useCallback } from "react";
 import {
   SERVICE_TECH_CONFIG,
   SERVICE_TECH_GROUPS,
 } from "../../../shared/constants/languageConfig";
+import { NODE_HANDLES } from "./nodeConfig";
 
 export default function ServiceNode({ data, isConnectable, id }) {
   const { setNodes } = useReactFlow();
@@ -42,40 +44,17 @@ export default function ServiceNode({ data, isConnectable, id }) {
     SERVICE_TECH_CONFIG[language] || SERVICE_TECH_CONFIG.nodejs;
 
   return (
-    <Box className="service-node">
-      {/* TOP */}
-      <Handle
-        type="source"
-        position={Position.Top}
-        id="target-top"
-        isConnectable={isConnectable}
-      />
-
-      {/* BOTTOM */}
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        id="source-bottom"
-        isConnectable={isConnectable}
-      />
-
-      {/* LEFT */}
-      <Handle
-        type="target"
-        position={Position.Left}
-        id="target-left"
-        isConnectable={isConnectable}
-        style={{ left: -5 }}
-      />
-
-      {/* RIGHT */}
-      <Handle
-        type="source"
-        position={Position.Right}
-        id="source-right"
-        isConnectable={isConnectable}
-        style={{ left: "auto", right: -5 }}
-      />
+    <Box className="service-node diagram-node">
+      {NODE_HANDLES.map((handleConfig) => (
+        <Handle
+          key={handleConfig.key}
+          type={handleConfig.type}
+          position={handleConfig.position}
+          id={handleConfig.id}
+          isConnectable={isConnectable}
+          style={handleConfig.style}
+        />
+      ))}
 
       <Box
         sx={{
@@ -159,3 +138,12 @@ export default function ServiceNode({ data, isConnectable, id }) {
     </Box>
   );
 }
+
+ServiceNode.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    language: PropTypes.string,
+  }),
+  isConnectable: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+};

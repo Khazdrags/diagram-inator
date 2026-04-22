@@ -70,6 +70,46 @@ export const FRONTEND_FRAMEWORKS_CONFIG = {
   },
 };
 
+// ─── Backend Frameworks ───────────────────────────────────────
+export const BACKEND_FRAMEWORKS_CONFIG = {
+  fastapi: {
+    label: "FastAPI",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+  },
+  express: {
+    label: "Express",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+  },
+  django: {
+    label: "Django",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
+  },
+  flask: {
+    label: "Flask",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+  },
+  rails: {
+    label: "Rails",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg",
+  },
+  spring: {
+    label: "Spring",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+  },
+  laravel: {
+    label: "Laravel",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+  },
+  nestjs: {
+    label: "NestJS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+  },
+  phoenix: {
+    label: "Phoenix",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/phoenix/phoenix-original.svg",
+  },
+};
+
 // ─── Databases ────────────────────────────────────────────────
 export const DATABASES_CONFIG = {
   mongo: {
@@ -105,11 +145,13 @@ export const DATABASES_CONFIG = {
 export const SERVICE_TECH_CONFIG = {
   ...LANGUAGES_CONFIG,
   ...FRONTEND_FRAMEWORKS_CONFIG,
+  ...BACKEND_FRAMEWORKS_CONFIG,
   ...DATABASES_CONFIG,
 };
 
 export const SERVICE_TECH_GROUPS = [
   { label: "Languages", options: LANGUAGES_CONFIG },
   { label: "Frontend Frameworks", options: FRONTEND_FRAMEWORKS_CONFIG },
+  { label: "Backend Frameworks", options: BACKEND_FRAMEWORKS_CONFIG },
   { label: "Databases", options: DATABASES_CONFIG },
 ];
