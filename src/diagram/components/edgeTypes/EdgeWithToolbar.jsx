@@ -5,12 +5,21 @@ import {
   getSmoothStepPath,
   useReactFlow,
 } from "@xyflow/react";
-import { Box, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import TuneIcon from "@mui/icons-material/Tune";
+import { Box, Button, Tooltip } from "@mui/material";
+import {
+  Minus,
+  MoveHorizontal,
+  MoveLeft,
+  MoveRight,
+  Trash2,
+} from "lucide-react";
 
 const markerConfigs = {
   none: { markerStart: undefined, markerEnd: undefined },
+  start: {
+    markerStart: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
+    markerEnd: undefined,
+  },
   end: {
     markerStart: undefined,
     markerEnd: { type: "arrowclosed", width: 10, height: 10, color: "#888" },
@@ -23,8 +32,16 @@ const markerConfigs = {
 
 const markerLabels = {
   none: "None",
+  start: "Start",
   end: "End only",
   both: "Both ends",
+};
+
+const markerIcons = {
+  none: Minus,
+  start: MoveLeft,
+  end: MoveRight,
+  both: MoveHorizontal,
 };
 
 export default function EdgeWithToolbar({
@@ -42,7 +59,6 @@ export default function EdgeWithToolbar({
 }) {
   const { setEdges, deleteElements } = useReactFlow();
   const [isHovering, setIsHovering] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
 
   const [edgePath, labelX, labelY] = getSmoothStepPath({
     sourceX,
@@ -68,31 +84,44 @@ export default function EdgeWithToolbar({
           : edge,
       ),
     );
-    setAnchorEl(null);
   };
 
   const handleDeleteEdge = () => {
     deleteElements({ edges: [{ id }] });
   };
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   const getCurrentMarkerType = () => {
     if (!markerStart && !markerEnd) {
       return "none";
+    } else if (markerStart && !markerEnd) {
+      return "start";
     } else if (!markerStart && markerEnd) {
       return "end";
     } else if (markerStart && markerEnd) {
       return "both";
     }
-    return "end";
+    return "none";
   };
+
+  const currentMarkerType = getCurrentMarkerType();
+
+  const markerButtonSx = (isActive) => ({
+    minWidth: "unset",
+    height: 28,
+    px: 1,
+    borderRadius: "9999px",
+    fontSize: "10px",
+    fontWeight: 700,
+    letterSpacing: "0.8px",
+    color: isActive ? "text.primary" : "text.secondary",
+    borderColor: isActive ? "primary.main" : "divider",
+    backgroundColor: isActive ? "rgba(30,215,96,0.12)" : "transparent",
+    "&:hover": {
+      borderColor: "primary.main",
+      color: "text.primary",
+      backgroundColor: "rgba(30,215,96,0.08)",
+    },
+  });
 
   return (
     <>
@@ -125,67 +154,53 @@ export default function EdgeWithToolbar({
                 borderColor: "divider",
                 borderRadius: "8px",
                 padding: "4px",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                boxShadow: "rgba(0,0,0,0.5) 0px 8px 24px",
                 pointerEvents: "auto",
               }}
               className="edge-toolbar"
             >
-              <Tooltip title="Change edge marker">
-                <IconButton
-                  size="small"
-                  onClick={handleMenuOpen}
-                  sx={{
-                    width: 32,
-                    height: 32,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    "&:hover": { backgroundColor: "action.hover" },
-                  }}
-                  aria-label="Change edge marker"
-                >
-                  <TuneIcon sx={{ fontSize: 16 }} />
-                </IconButton>
-              </Tooltip>
-
-              <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleMenuClose}
-                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-                transformOrigin={{ vertical: "top", horizontal: "center" }}
-              >
-                {Object.entries(markerLabels).map(([key, label]) => (
-                  <MenuItem
-                    key={key}
+              {Object.entries(markerLabels).map(([key, label]) => (
+                <Tooltip key={key} title={label}>
+                  <Button
+                    size="small"
+                    variant="outlined"
                     onClick={() => handleMarkerChange(key)}
-                    selected={getCurrentMarkerType() === key}
+                    sx={markerButtonSx(currentMarkerType === key)}
+                    aria-label={`Set marker: ${label}`}
                   >
-                    {label}
-                  </MenuItem>
-                ))}
-              </Menu>
+                    {(() => {
+                      const MarkerIcon = markerIcons[key];
+                      return <MarkerIcon size={14} strokeWidth={2.25} />;
+                    })()}
+                  </Button>
+                </Tooltip>
+              ))}
 
               <Tooltip title="Delete connection">
-                <IconButton
+                <Button
                   size="small"
                   onClick={handleDeleteEdge}
+                  variant="outlined"
                   sx={{
-                    width: 32,
-                    height: 32,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    minWidth: "unset",
+                    height: 28,
+                    px: 1,
+                    borderRadius: "9999px",
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "0.8px",
                     color: "error.main",
+                    borderColor: "error.main",
                     "&:hover": {
-                      backgroundColor: "error.lighter",
+                      backgroundColor: "rgba(243,114,127,0.14)",
                       color: "error.dark",
+                      borderColor: "error.dark",
                     },
                   }}
                   aria-label="Delete connection"
                 >
-                  <DeleteIcon sx={{ fontSize: 16 }} />
-                </IconButton>
+                  <Trash2 size={14} strokeWidth={2.25} />
+                </Button>
               </Tooltip>
             </Box>
           )}

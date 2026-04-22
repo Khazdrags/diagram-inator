@@ -1,5 +1,4 @@
 import { Box, Typography, Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
 import doofImage from "../../shared/assets/home/doof.png";
 
@@ -51,7 +50,6 @@ export default function HeroSection() {
           variant="contained"
           color="primary"
           size="large"
-          startIcon={<AddIcon />}
           onClick={() => navigate("/diagram")}
           sx={{
             px: 4,

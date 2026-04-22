@@ -1,7 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { useRef, useState } from "react";
 
-function DraggableNode({ label, caption, type, icon, onDropNode }) {
+function DraggableNode({ label, caption, type, onDropNode }) {
   const [isDragging, setIsDragging] = useState(false);
   const pointerIdRef = useRef(null);
 
@@ -63,14 +63,6 @@ function DraggableNode({ label, caption, type, icon, onDropNode }) {
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-        {icon && (
-          <img
-            src={icon}
-            alt=""
-            aria-hidden="true"
-            style={{ width: 20, height: 20, flexShrink: 0 }}
-          />
-        )}
         <Typography variant="body2" sx={{ color: "text.primary" }}>
           {label}
         </Typography>
