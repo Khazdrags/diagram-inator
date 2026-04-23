@@ -1,0 +1,98 @@
+[
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Magistral Small 1.2",
+    "unit": "1K tokens",
+    "inputPrice": 0.00088,
+    "outputPrice": 0.00263
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Ministral 14B 3.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.0002,
+    "outputPrice": 0.0002
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Ministral 3B 3.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.00017,
+    "outputPrice": 0.0001
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Ministral 8B 3.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.00007,
+    "outputPrice": 0.00026
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Mistral 7B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00015,
+    "outputPrice": 0.0002
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Mistral Large",
+    "unit": "1K tokens",
+    "inputPrice": 0.004,
+    "outputPrice": 0.012
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Mistral Large 3",
+    "unit": "1K tokens",
+    "inputPrice": 0.00025,
+    "outputPrice": 0.0015
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Mistral Small",
+    "unit": "1K tokens",
+    "inputPrice": 0.001,
+    "outputPrice": 0.003
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Mixtral 8x7B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00045,
+    "outputPrice": 0.0007
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Pixtral Large 25.02",
+    "unit": "1K tokens",
+    "inputPrice": 0.002,
+    "outputPrice": 0.006
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Voxtral Mini 1.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.00004,
+    "outputPrice": 0.00002
+  },
+  {
+    "provider": "Mistral",
+    "regionCode": "us-east-1",
+    "model": "Voxtral Small 1.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.00005,
+    "outputPrice": 0.0003
+  }
+]

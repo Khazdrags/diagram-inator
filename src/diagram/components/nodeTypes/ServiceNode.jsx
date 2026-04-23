@@ -83,28 +83,12 @@ export default function ServiceNode({ data, isConnectable, id }) {
 
         {/* Columna 2, fila 1: nombre */}
         <TextField
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-title-field diagram-node-title-field--plain"
           value={name}
           onChange={handleNameChange}
           size="small"
           variant="standard"
           placeholder="Service name"
-          sx={{
-            "& .MuiInput-root": {
-              fontSize: "16px",
-              fontWeight: 600,
-              lineHeight: 1.2,
-            },
-            "& .MuiInput-underline:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline:hover:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline.Mui-focused:after": {
-              borderBottomColor: "currentColor",
-            },
-          }}
         />
 
         {/* Columna 2, fila 2: selector */}

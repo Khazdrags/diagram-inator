@@ -2,6 +2,10 @@ import { createContext, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import metaPrices from "../../shared/constants/meta_prices.json";
 import openaiPrices from "../../shared/constants/openai_prices.json";
+import anthropicPrices from "../../shared/constants/anthropic_prices.json";
+import googlePrices from "../../shared/constants/google_prices.json";
+import mistralPrices from "../../shared/constants/mistral_prices.json";
+import qwenPrices from "../../shared/constants/qwen_prices.json";
 
 const BedrockDataContext = createContext(null);
 
@@ -9,7 +13,14 @@ const BedrockDataContext = createContext(null);
 const ALL_ENTRIES = (() => {
   const seen = new Set();
   const result = [];
-  for (const entry of [...metaPrices, ...openaiPrices]) {
+  for (const entry of [
+    ...metaPrices,
+    ...openaiPrices,
+    ...anthropicPrices,
+    ...googlePrices,
+    ...mistralPrices,
+    ...qwenPrices,
+  ]) {
     const key = `${entry.provider}::${entry.model}`;
     if (!seen.has(key)) {
       seen.add(key);

@@ -35,43 +35,6 @@ const normalizePlatform = (value) =>
     .trim()
     .toLowerCase();
 
-const labelSx = {
-  fontSize: "10px",
-  color: "#b3b3b3",
-  mb: "2px",
-  textTransform: "uppercase",
-  letterSpacing: "1px",
-  lineHeight: 1,
-};
-
-const selectSx = {
-  fontSize: "13px",
-  color: "text.primary",
-  "& .MuiSelect-standard": { pb: "2px" },
-  "& .MuiSelect-icon": { color: "#b3b3b3" },
-  "&:before": { borderBottomColor: "rgba(255,255,255,0.15)" },
-  "&:hover:not(.Mui-disabled):before": {
-    borderBottomColor: "rgba(255,255,255,0.4) !important",
-  },
-  "&:after": { borderBottomColor: "#1ed760" },
-};
-
-const infoCardSx = {
-  bgcolor: "rgba(255,255,255,0.04)",
-  borderRadius: "6px",
-  p: "8px 10px",
-  mb: "10px",
-};
-
-const totalCardSx = {
-  bgcolor: "rgba(30, 215, 96, 0.08)",
-  borderRadius: "6px",
-  p: "8px 10px",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "baseline",
-};
-
 export default function EC2Node({ data, isConnectable, id }) {
   const { setNodes } = useReactFlow();
   const { families, sizesByFamily, loading } = useEC2Data();
@@ -169,50 +132,33 @@ export default function EC2Node({ data, isConnectable, id }) {
       ))}
 
       {/* ── Header: icon + editable name ── */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "6px" }}>
+      <Box className="diagram-node-header">
         <img
           src={EC2Icon}
           alt="EC2"
           style={{ width: 30, height: 30, flexShrink: 0 }}
         />
         <TextField
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-title-field diagram-node-title-field--accent"
           value={name}
           onChange={(e) => update({ name: e.target.value })}
           size="small"
           variant="standard"
           placeholder="Instance name"
-          sx={{
-            flex: 1,
-            "& .MuiInput-root": {
-              fontSize: "15px",
-              fontWeight: 700,
-              lineHeight: 1.2,
-            },
-            "& .MuiInput-underline:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline:hover:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline.Mui-focused:after": {
-              borderBottomColor: "#1ed760",
-            },
-          }}
+          sx={{ flex: 1 }}
         />
       </Box>
 
       {/* ── OS ── */}
       <Box sx={{ mb: "6px" }}>
-        <Typography sx={labelSx}>OS</Typography>
+        <Typography className="diagram-node-section-label">OS</Typography>
         <Select
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-select"
           value={os}
           onChange={(e) => update({ os: e.target.value })}
           size="small"
           variant="standard"
           fullWidth
-          sx={selectSx}
         >
           {OS_OPTIONS.map((o) => (
             <MenuItem key={o} value={o} sx={{ fontSize: "13px" }}>
@@ -224,7 +170,7 @@ export default function EC2Node({ data, isConnectable, id }) {
 
       {/* ── Instance type (family) ── */}
       <Box sx={{ mb: "6px" }}>
-        <Typography sx={labelSx}>Type</Typography>
+        <Typography className="diagram-node-section-label">Type</Typography>
         {loading ? (
           <Box
             sx={{ display: "flex", alignItems: "center", gap: 1, py: "4px" }}
@@ -236,13 +182,12 @@ export default function EC2Node({ data, isConnectable, id }) {
           </Box>
         ) : (
           <Select
-            className="nodrag nopan"
+            className="nodrag nopan diagram-node-select"
             value={safeFamily}
             onChange={handleFamilyChange}
             size="small"
             variant="standard"
             fullWidth
-            sx={selectSx}
           >
             {families.map((f) => (
               <MenuItem key={f} value={f} sx={{ fontSize: "13px" }}>
@@ -255,9 +200,9 @@ export default function EC2Node({ data, isConnectable, id }) {
 
       {/* ── Size ── */}
       <Box sx={{ mb: "10px" }}>
-        <Typography sx={labelSx}>Size</Typography>
+        <Typography className="diagram-node-section-label">Size</Typography>
         <Select
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-select"
           value={safeSize}
           onChange={(e) => update({ size: e.target.value })}
           renderValue={(selected) => selected}
@@ -265,7 +210,6 @@ export default function EC2Node({ data, isConnectable, id }) {
           variant="standard"
           fullWidth
           disabled={loading || sizes.length === 0}
-          sx={selectSx}
         >
           {sizes.map((entry) => {
             const s = entry.size;
@@ -307,7 +251,9 @@ export default function EC2Node({ data, isConnectable, id }) {
             mb: "2px",
           }}
         >
-          <Typography sx={labelSx}>Hours / day</Typography>
+          <Typography className="diagram-node-section-label">
+            Hours / day
+          </Typography>
           <Box sx={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
             <Typography
               sx={{ fontSize: "13px", fontWeight: 700, color: "text.primary" }}
@@ -346,16 +292,8 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Price summary ── */}
-      <Box sx={infoCardSx}>
-        <Typography
-          sx={{
-            fontSize: "10px",
-            color: "#b3b3b3",
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-            mb: "6px",
-          }}
-        >
+      <Box className="diagram-node-info-card">
+        <Typography className="diagram-node-card-heading">
           Price summary
         </Typography>
         <Box
@@ -377,7 +315,7 @@ export default function EC2Node({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Monthly total ── */}
-      <Box sx={totalCardSx}>
+      <Box className="diagram-node-total-card">
         <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
           Total cost (30 days)
         </Typography>

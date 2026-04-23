@@ -19,29 +19,6 @@ import {
 } from "../../helpers/bedrockPricing";
 import { NODE_HANDLES } from "./nodeConfig";
 
-// ── Shared style tokens ──────────────────────────────────────────────────────
-
-const labelSx = {
-  fontSize: "10px",
-  color: "#b3b3b3",
-  mb: "2px",
-  textTransform: "uppercase",
-  letterSpacing: "1px",
-  lineHeight: 1,
-};
-
-const selectSx = {
-  fontSize: "13px",
-  color: "text.primary",
-  "& .MuiSelect-standard": { pb: "2px" },
-  "& .MuiSelect-icon": { color: "#b3b3b3" },
-  "&:before": { borderBottomColor: "rgba(255,255,255,0.15)" },
-  "&:hover:not(.Mui-disabled):before": {
-    borderBottomColor: "rgba(255,255,255,0.4) !important",
-  },
-  "&:after": { borderBottomColor: "#1ed760" },
-};
-
 const numberFieldSx = {
   "& .MuiInput-root": { fontSize: "13px" },
   "& .MuiInput-underline:before": {
@@ -68,24 +45,6 @@ const resultRowSx = {
 
 const resultLabelSx = { fontSize: "11px", color: "#b3b3b3" };
 const resultValueSx = { fontSize: "13px", fontWeight: 700, color: "#1ed760" };
-
-const infoCardSx = {
-  bgcolor: "rgba(255,255,255,0.04)",
-  borderRadius: "6px",
-  p: "8px 10px",
-  mb: "10px",
-};
-
-const totalCardSx = {
-  bgcolor: "rgba(30, 215, 96, 0.08)",
-  borderRadius: "6px",
-  p: "8px 10px",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "baseline",
-};
-
-// ── Component ────────────────────────────────────────────────────────────────
 
 export default function BedrockNode({ data, isConnectable, id }) {
   const { setNodes } = useReactFlow();
@@ -177,50 +136,33 @@ export default function BedrockNode({ data, isConnectable, id }) {
       ))}
 
       {/* ── Header: editable name ── */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "6px" }}>
+      <Box className="diagram-node-header">
         <img
           src="https://unpkg.com/aws-icons@latest/icons/architecture-service/AmazonBedrock.svg"
           alt="Amazon Bedrock"
           style={{ width: 30, height: 30, flexShrink: 0 }}
         />
         <TextField
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-title-field diagram-node-title-field--accent"
           value={name}
           onChange={(e) => update({ name: e.target.value })}
           size="small"
           variant="standard"
           placeholder="Model name"
-          sx={{
-            flex: 1,
-            "& .MuiInput-root": {
-              fontSize: "15px",
-              fontWeight: 700,
-              lineHeight: 1.2,
-            },
-            "& .MuiInput-underline:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline:hover:before": {
-              borderBottomColor: "transparent",
-            },
-            "& .MuiInput-underline.Mui-focused:after": {
-              borderBottomColor: "#1ed760",
-            },
-          }}
+          sx={{ flex: 1 }}
         />
       </Box>
 
       {/* ── Provider ── */}
       <Box sx={{ mb: "6px" }}>
-        <Typography sx={labelSx}>Provider</Typography>
+        <Typography className="diagram-node-section-label">Provider</Typography>
         <Select
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-select"
           value={safeProvider}
           onChange={handleProviderChange}
           size="small"
           variant="standard"
           fullWidth
-          sx={selectSx}
         >
           {providers.map((p) => (
             <MenuItem key={p} value={p} sx={{ fontSize: "13px" }}>
@@ -232,15 +174,14 @@ export default function BedrockNode({ data, isConnectable, id }) {
 
       {/* ── Model ── */}
       <Box sx={{ mb: "10px" }}>
-        <Typography sx={labelSx}>Model</Typography>
+        <Typography className="diagram-node-section-label">Model</Typography>
         <Select
-          className="nodrag nopan"
+          className="nodrag nopan diagram-node-select"
           value={safeModel}
           onChange={(e) => update({ model: e.target.value })}
           size="small"
           variant="standard"
           fullWidth
-          sx={selectSx}
         >
           {modelsForProvider.map((m) => (
             <MenuItem key={m} value={m} sx={{ fontSize: "13px" }}>
@@ -251,16 +192,8 @@ export default function BedrockNode({ data, isConnectable, id }) {
       </Box>
 
       {/* ── Block A: Price per 1M tokens ── */}
-      <Box sx={infoCardSx}>
-        <Typography
-          sx={{
-            fontSize: "10px",
-            color: "#b3b3b3",
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-            mb: "6px",
-          }}
-        >
+      <Box className="diagram-node-info-card">
+        <Typography className="diagram-node-card-heading">
           Price per 1M tokens
         </Typography>
         <Box sx={resultRowSx}>
@@ -295,7 +228,9 @@ export default function BedrockNode({ data, isConnectable, id }) {
       <Box sx={{ display: "flex", gap: "8px", mb: "8px" }}>
         {/* Messages */}
         <Box sx={{ flex: 1 }}>
-          <Typography sx={labelSx}>Messages</Typography>
+          <Typography className="diagram-node-section-label">
+            Msg count
+          </Typography>
           <TextField
             className="nodrag nopan"
             value={messageCount}
@@ -311,7 +246,9 @@ export default function BedrockNode({ data, isConnectable, id }) {
 
         {/* Avg input */}
         <Box sx={{ flex: 1 }}>
-          <Typography sx={labelSx}>Avg input</Typography>
+          <Typography className="diagram-node-section-label">
+            input tokens
+          </Typography>
           <TextField
             className="nodrag nopan"
             value={avgInputTokens}
@@ -336,7 +273,9 @@ export default function BedrockNode({ data, isConnectable, id }) {
 
         {/* Avg output */}
         <Box sx={{ flex: 1 }}>
-          <Typography sx={labelSx}>Avg output</Typography>
+          <Typography className="diagram-node-section-label">
+            output tokens
+          </Typography>
           <TextField
             className="nodrag nopan"
             value={avgOutputTokens}
@@ -378,7 +317,7 @@ export default function BedrockNode({ data, isConnectable, id }) {
       </Box>
 
       {/* Total cost */}
-      <Box sx={totalCardSx}>
+      <Box className="diagram-node-total-card">
         <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
           Total cost
         </Typography>

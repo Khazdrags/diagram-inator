@@ -1,0 +1,58 @@
+[
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 235B A22B 2507",
+    "unit": "1K tokens",
+    "inputPrice": 0.00022,
+    "outputPrice": 0.00088
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 32B",
+    "unit": "1K tokens",
+    "inputPrice": 0.000075,
+    "outputPrice": 0.0003
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 Coder 30B A3B",
+    "unit": "1K tokens",
+    "inputPrice": 0.000075,
+    "outputPrice": 0.0006
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 Coder 480B A35B",
+    "unit": "1K tokens",
+    "inputPrice": 0.000225,
+    "outputPrice": 0.0009
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 Coder Next",
+    "unit": "1K tokens",
+    "inputPrice": 0.000875,
+    "outputPrice": 0.0012
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 Next 80B A3B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00007,
+    "outputPrice": 0.0006
+  },
+  {
+    "provider": "Qwen",
+    "regionCode": "us-east-1",
+    "model": "Qwen3 VL 235B A22B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00026,
+    "outputPrice": 0.00133
+  }
+]

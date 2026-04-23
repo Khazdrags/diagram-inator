@@ -96,6 +96,99 @@
   align-items: center;
 }
 
+.diagram-node-title-field--plain .MuiInput-root {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.diagram-node-title-field--accent .MuiInput-root {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.diagram-node-title-field .MuiInput-underline:before {
+  border-bottom-color: transparent;
+}
+
+.diagram-node-title-field .MuiInput-underline:hover:before {
+  border-bottom-color: transparent;
+}
+
+.diagram-node-title-field--plain .MuiInput-underline.Mui-focused:after {
+  border-bottom-color: currentColor;
+}
+
+.diagram-node-title-field--accent .MuiInput-underline.Mui-focused:after {
+  border-bottom-color: #1ed760;
+}
+
+.diagram-node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.diagram-node-section-label {
+  font-size: 8px;
+  color: #b3b3b3;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.diagram-node-select {
+  font-size: 13px;
+  color: var(--mui-palette-text-primary);
+}
+
+.diagram-node-select .MuiSelect-standard {
+  padding-bottom: 2px;
+}
+
+.diagram-node-select .MuiSelect-icon {
+  color: #b3b3b3;
+}
+
+.diagram-node-select:before {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.diagram-node-select:hover:not(.Mui-disabled):before {
+  border-bottom-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.diagram-node-select:after {
+  border-bottom-color: #1ed760;
+}
+
+.diagram-node-info-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.diagram-node-total-card {
+  background-color: rgba(30, 215, 96, 0.08);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.diagram-node-card-heading {
+  font-size: 10px;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
 .service-node .MuiTextField-root,
 .default-node .MuiTextField-root,
 .service-node .MuiSelect-root {

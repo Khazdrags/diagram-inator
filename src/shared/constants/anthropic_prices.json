@@ -1,0 +1,42 @@
+[
+  {
+    "provider": "Anthropic",
+    "regionCode": "us-east-1",
+    "model": "Claude 2.0",
+    "unit": "1K tokens",
+    "inputPrice": 0.008,
+    "outputPrice": null
+  },
+  {
+    "provider": "Anthropic",
+    "regionCode": "us-east-1",
+    "model": "Claude 2.1",
+    "unit": "1K tokens",
+    "inputPrice": 0.008,
+    "outputPrice": null
+  },
+  {
+    "provider": "Anthropic",
+    "regionCode": "us-east-1",
+    "model": "Claude 3 Haiku",
+    "unit": "1K tokens",
+    "inputPrice": 0.00025,
+    "outputPrice": null
+  },
+  {
+    "provider": "Anthropic",
+    "regionCode": "us-east-1",
+    "model": "Claude 3 Sonnet",
+    "unit": "1K tokens",
+    "inputPrice": 0.003,
+    "outputPrice": null
+  },
+  {
+    "provider": "Anthropic",
+    "regionCode": "us-east-1",
+    "model": "Claude Instant",
+    "unit": "1K tokens",
+    "inputPrice": 0.0008,
+    "outputPrice": null
+  }
+]

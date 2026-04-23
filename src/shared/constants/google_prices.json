@@ -1,0 +1,26 @@
+[
+  {
+    "provider": "Google",
+    "regionCode": "us-east-1",
+    "model": "Gemma 3 12B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00005,
+    "outputPrice": 0.00015
+  },
+  {
+    "provider": "Google",
+    "regionCode": "us-east-1",
+    "model": "Gemma 3 27B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00023,
+    "outputPrice": 0.00038
+  },
+  {
+    "provider": "Google",
+    "regionCode": "us-east-1",
+    "model": "Gemma 3 4B",
+    "unit": "1K tokens",
+    "inputPrice": 0.00007,
+    "outputPrice": 0.00004
+  }
+]
