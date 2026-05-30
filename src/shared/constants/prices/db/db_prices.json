@@ -1,0 +1,168 @@
+{
+  "region": "us-east-1",
+  "generatedAt": "2025-01-01T00:00:00Z",
+  "rds": {
+    "storage_gp2_per_gb": 0.115,
+    "storage_gp3_per_gb": 0.115,
+    "standard_instances": [
+      { "instance": "db.t3.micro", "priceHr": 0.017, "multiAZPriceHr": 0.034 },
+      { "instance": "db.t3.small", "priceHr": 0.034, "multiAZPriceHr": 0.068 },
+      { "instance": "db.t3.medium", "priceHr": 0.068, "multiAZPriceHr": 0.136 },
+      { "instance": "db.t3.large", "priceHr": 0.136, "multiAZPriceHr": 0.272 },
+      { "instance": "db.t4g.micro", "priceHr": 0.016, "multiAZPriceHr": 0.032 },
+      { "instance": "db.t4g.small", "priceHr": 0.032, "multiAZPriceHr": 0.064 },
+      { "instance": "db.t4g.medium", "priceHr": 0.065, "multiAZPriceHr": 0.13 },
+      { "instance": "db.t4g.large", "priceHr": 0.13, "multiAZPriceHr": 0.26 },
+      { "instance": "db.m5.large", "priceHr": 0.171, "multiAZPriceHr": 0.342 },
+      { "instance": "db.m5.xlarge", "priceHr": 0.342, "multiAZPriceHr": 0.684 },
+      {
+        "instance": "db.m5.2xlarge",
+        "priceHr": 0.684,
+        "multiAZPriceHr": 1.368
+      },
+      {
+        "instance": "db.m5.4xlarge",
+        "priceHr": 1.368,
+        "multiAZPriceHr": 2.736
+      },
+      { "instance": "db.m6g.large", "priceHr": 0.162, "multiAZPriceHr": 0.324 },
+      { "instance": "db.m6g.xlarge", "priceHr": 0.325, "multiAZPriceHr": 0.65 },
+      { "instance": "db.m6g.2xlarge", "priceHr": 0.65, "multiAZPriceHr": 1.3 },
+      { "instance": "db.r5.large", "priceHr": 0.24, "multiAZPriceHr": 0.48 },
+      { "instance": "db.r5.xlarge", "priceHr": 0.48, "multiAZPriceHr": 0.96 },
+      { "instance": "db.r5.2xlarge", "priceHr": 0.96, "multiAZPriceHr": 1.92 },
+      { "instance": "db.r5.4xlarge", "priceHr": 1.92, "multiAZPriceHr": 3.84 },
+      { "instance": "db.r6g.large", "priceHr": 0.23, "multiAZPriceHr": 0.46 },
+      { "instance": "db.r6g.xlarge", "priceHr": 0.46, "multiAZPriceHr": 0.92 },
+      { "instance": "db.r6g.2xlarge", "priceHr": 0.92, "multiAZPriceHr": 1.84 },
+      { "instance": "db.r7g.large", "priceHr": 0.231, "multiAZPriceHr": 0.462 },
+      { "instance": "db.r7g.xlarge", "priceHr": 0.462, "multiAZPriceHr": 0.924 }
+    ],
+    "sqlserver_instances": [
+      { "instance": "db.t3.small", "priceHr": 0.2, "multiAZPriceHr": 0.4 },
+      { "instance": "db.t3.medium", "priceHr": 0.4, "multiAZPriceHr": 0.8 },
+      { "instance": "db.t3.large", "priceHr": 0.8, "multiAZPriceHr": 1.6 },
+      { "instance": "db.m5.large", "priceHr": 0.658, "multiAZPriceHr": 1.316 },
+      { "instance": "db.m5.xlarge", "priceHr": 1.316, "multiAZPriceHr": 2.632 },
+      {
+        "instance": "db.m5.2xlarge",
+        "priceHr": 2.632,
+        "multiAZPriceHr": 5.264
+      },
+      { "instance": "db.r5.large", "priceHr": 0.927, "multiAZPriceHr": 1.854 },
+      { "instance": "db.r5.xlarge", "priceHr": 1.854, "multiAZPriceHr": 3.708 },
+      { "instance": "db.r5.2xlarge", "priceHr": 3.708, "multiAZPriceHr": 7.416 }
+    ],
+    "oracle_instances": [
+      { "instance": "db.t3.small", "priceHr": 0.034, "multiAZPriceHr": 0.068 },
+      { "instance": "db.t3.medium", "priceHr": 0.068, "multiAZPriceHr": 0.136 },
+      { "instance": "db.t3.large", "priceHr": 0.136, "multiAZPriceHr": 0.272 },
+      { "instance": "db.m5.large", "priceHr": 0.171, "multiAZPriceHr": 0.342 },
+      { "instance": "db.m5.xlarge", "priceHr": 0.342, "multiAZPriceHr": 0.684 },
+      { "instance": "db.r5.large", "priceHr": 0.24, "multiAZPriceHr": 0.48 },
+      { "instance": "db.r5.xlarge", "priceHr": 0.48, "multiAZPriceHr": 0.96 }
+    ]
+  },
+  "aurora": {
+    "storage_per_gb": 0.1,
+    "io_per_million": 0.2,
+    "serverless_v2_acu_hr": 0.12,
+    "instances": [
+      { "instance": "db.t3.medium", "priceHr": 0.082 },
+      { "instance": "db.t4g.medium", "priceHr": 0.073 },
+      { "instance": "db.t4g.large", "priceHr": 0.146 },
+      { "instance": "db.r5.large", "priceHr": 0.285 },
+      { "instance": "db.r5.xlarge", "priceHr": 0.57 },
+      { "instance": "db.r5.2xlarge", "priceHr": 1.14 },
+      { "instance": "db.r5.4xlarge", "priceHr": 2.28 },
+      { "instance": "db.r6g.large", "priceHr": 0.26 },
+      { "instance": "db.r6g.xlarge", "priceHr": 0.52 },
+      { "instance": "db.r6g.2xlarge", "priceHr": 1.04 },
+      { "instance": "db.r7g.large", "priceHr": 0.26 },
+      { "instance": "db.r7g.xlarge", "priceHr": 0.52 }
+    ]
+  },
+  "dynamodb": {
+    "on_demand": { "write_per_million": 1.25, "read_per_million": 0.25 },
+    "provisioned": { "wcu_per_hr": 0.00065, "rcu_per_hr": 0.00013 },
+    "storage_per_gb": 0.25,
+    "free_tier": {
+      "reads_per_month": 25000000000,
+      "writes_per_month": 2500000000,
+      "storage_gb": 25
+    }
+  },
+  "elasticache": {
+    "redis_instances": [
+      { "node": "cache.t3.micro", "priceHr": 0.017 },
+      { "node": "cache.t3.small", "priceHr": 0.034 },
+      { "node": "cache.t3.medium", "priceHr": 0.068 },
+      { "node": "cache.t4g.micro", "priceHr": 0.016 },
+      { "node": "cache.t4g.small", "priceHr": 0.032 },
+      { "node": "cache.t4g.medium", "priceHr": 0.063 },
+      { "node": "cache.m5.large", "priceHr": 0.147 },
+      { "node": "cache.m5.xlarge", "priceHr": 0.294 },
+      { "node": "cache.m6g.large", "priceHr": 0.148 },
+      { "node": "cache.r5.large", "priceHr": 0.166 },
+      { "node": "cache.r5.xlarge", "priceHr": 0.332 },
+      { "node": "cache.r6g.large", "priceHr": 0.168 },
+      { "node": "cache.r7g.large", "priceHr": 0.168 }
+    ],
+    "valkey_instances": [
+      { "node": "cache.t3.micro", "priceHr": 0.014 },
+      { "node": "cache.t3.small", "priceHr": 0.027 },
+      { "node": "cache.t3.medium", "priceHr": 0.054 },
+      { "node": "cache.t4g.micro", "priceHr": 0.013 },
+      { "node": "cache.t4g.small", "priceHr": 0.026 },
+      { "node": "cache.t4g.medium", "priceHr": 0.05 },
+      { "node": "cache.m6g.large", "priceHr": 0.118 },
+      { "node": "cache.r6g.large", "priceHr": 0.134 },
+      { "node": "cache.r7g.large", "priceHr": 0.134 }
+    ],
+    "memcached_instances": [
+      { "node": "cache.t3.micro", "priceHr": 0.017 },
+      { "node": "cache.t3.small", "priceHr": 0.034 },
+      { "node": "cache.t3.medium", "priceHr": 0.068 },
+      { "node": "cache.m5.large", "priceHr": 0.147 },
+      { "node": "cache.m5.xlarge", "priceHr": 0.294 },
+      { "node": "cache.r5.large", "priceHr": 0.166 },
+      { "node": "cache.r6g.large", "priceHr": 0.168 }
+    ]
+  },
+  "documentdb": {
+    "storage_per_gb": 0.1,
+    "io_per_million": 0.2,
+    "instances": [
+      { "instance": "db.t3.medium", "priceHr": 0.073 },
+      { "instance": "db.r5.large", "priceHr": 0.277 },
+      { "instance": "db.r5.xlarge", "priceHr": 0.554 },
+      { "instance": "db.r5.2xlarge", "priceHr": 1.108 },
+      { "instance": "db.r6g.large", "priceHr": 0.267 },
+      { "instance": "db.r6g.xlarge", "priceHr": 0.534 },
+      { "instance": "db.r7g.large", "priceHr": 0.267 }
+    ]
+  },
+  "neptune": {
+    "storage_per_gb": 0.1,
+    "io_per_million": 0.2,
+    "instances": [
+      { "instance": "db.t3.medium", "priceHr": 0.082 },
+      { "instance": "db.r5.large", "priceHr": 0.295 },
+      { "instance": "db.r5.xlarge", "priceHr": 0.59 },
+      { "instance": "db.r5.2xlarge", "priceHr": 1.18 },
+      { "instance": "db.r6g.large", "priceHr": 0.28 },
+      { "instance": "db.r6g.xlarge", "priceHr": 0.56 }
+    ]
+  },
+  "keyspaces": {
+    "write_per_million": 0.65,
+    "read_per_million": 0.13,
+    "storage_per_gb": 0.25
+  },
+  "timestream": {
+    "writes_per_million": 0.5,
+    "memory_store_gb_hr": 0.036,
+    "magnetic_store_gb_mo": 0.03,
+    "query_per_gb_scanned": 0.01
+  }
+}

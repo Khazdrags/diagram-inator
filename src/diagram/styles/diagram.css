@@ -67,7 +67,8 @@
 
 .diagram-canvas-wrapper .react-flow__node-ec2,
 .diagram-canvas-wrapper .react-flow__node-bedrock,
-.diagram-canvas-wrapper .react-flow__node-lambda {
+.diagram-canvas-wrapper .react-flow__node-lambda,
+.diagram-canvas-wrapper .react-flow__node-db {
   width: var(--diagram-node-width);
   min-width: var(--diagram-node-width);
   max-width: var(--diagram-node-width);

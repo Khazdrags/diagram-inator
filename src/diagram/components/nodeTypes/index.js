@@ -1,4 +1,5 @@
 import BedrockNode from "./BedrockNode";
+import DBNode from "./DBNode";
 import DefaultNode from "./DefaultNode";
 import EC2Node from "./EC2Node";
 import LambdaNode from "./LambdaNode";
@@ -14,4 +15,5 @@ export const nodeTypes = {
   ec2: EC2Node,
   bedrock: BedrockNode,
   lambda: LambdaNode,
+  db: DBNode,
 };

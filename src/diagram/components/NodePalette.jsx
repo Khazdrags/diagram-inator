@@ -131,6 +131,15 @@ export default function NodePalette({ onDropNode }) {
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <DraggableNode
+          label="AWS Database"
+          caption="Managed DB with cost calculator"
+          type="db"
+          onDropNode={onDropNode}
+        />
+      </Box>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <DraggableNode
           label="Default node"
           caption="Press, drag and release over canvas"
           type="default"
