@@ -14,6 +14,7 @@ import { useCallback, useMemo, useRef } from "react";
 import NodePalette from "./NodePalette";
 import { nodeTypes } from "./nodeTypes";
 import { edgeTypes } from "./edgeTypes";
+import { LambdaDataProvider } from "../context/LambdaDataContext";
 
 /** Default data factory per node type */
 const NODE_DEFAULTS = {
@@ -121,7 +122,9 @@ function DiagramCanvasInner() {
 export default function DiagramCanvas() {
   return (
     <ReactFlowProvider>
-      <DiagramCanvasInner />
+      <LambdaDataProvider>
+        <DiagramCanvasInner />
+      </LambdaDataProvider>
     </ReactFlowProvider>
   );
 }

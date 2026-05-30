@@ -18,33 +18,14 @@ import {
   pricePerMillion,
 } from "../../helpers/bedrockPricing";
 import { NODE_HANDLES } from "./nodeConfig";
-
-const numberFieldSx = {
-  "& .MuiInput-root": { fontSize: "13px" },
-  "& .MuiInput-underline:before": {
-    borderBottomColor: "rgba(255,255,255,0.15)",
-  },
-  "& .MuiInput-underline:hover:before": {
-    borderBottomColor: "rgba(255,255,255,0.4) !important",
-  },
-  "& .MuiInput-underline:after": { borderBottomColor: "#1ed760" },
-  "& input[type=number]": { MozAppearance: "textfield" },
-  "& input[type=number]::-webkit-outer-spin-button": {
-    WebkitAppearance: "none",
-  },
-  "& input[type=number]::-webkit-inner-spin-button": {
-    WebkitAppearance: "none",
-  },
-};
-
-const resultRowSx = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "baseline",
-};
-
-const resultLabelSx = { fontSize: "11px", color: "#b3b3b3" };
-const resultValueSx = { fontSize: "13px", fontWeight: 700, color: "#1ed760" };
+import {
+  numberFieldSx,
+  resultLabelSx,
+  resultRowSx,
+  resultValueSx,
+  totalCardLabelSx,
+  totalCardValueSx,
+} from "./nodeStyles";
 
 export default function BedrockNode({ data, isConnectable, id }) {
   const { setNodes } = useReactFlow();
@@ -318,14 +299,8 @@ export default function BedrockNode({ data, isConnectable, id }) {
 
       {/* Total cost */}
       <Box className="diagram-node-total-card">
-        <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
-          Total cost
-        </Typography>
-        <Typography
-          sx={{ fontSize: "15px", fontWeight: 800, color: "#1ed760" }}
-        >
-          {formatUSD(totalCost)}
-        </Typography>
+        <Typography sx={totalCardLabelSx}>Total cost</Typography>
+        <Typography sx={totalCardValueSx}>{formatUSD(totalCost)}</Typography>
       </Box>
     </Box>
   );

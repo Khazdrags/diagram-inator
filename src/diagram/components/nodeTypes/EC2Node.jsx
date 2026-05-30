@@ -13,6 +13,7 @@ import { useCallback, useMemo } from "react";
 import EC2Icon from "../../../shared/assets/aws/EC2.svg";
 import { useEC2Data } from "../../context/EC2DataContext";
 import { NODE_HANDLES } from "./nodeConfig";
+import { totalCardLabelSx, totalCardValueSx } from "./nodeStyles";
 
 const OS_OPTIONS = [
   "Amazon Linux 2",
@@ -316,12 +317,8 @@ export default function EC2Node({ data, isConnectable, id }) {
 
       {/* ── Monthly total ── */}
       <Box className="diagram-node-total-card">
-        <Typography sx={{ fontSize: "11px", color: "#b3b3b3" }}>
-          Total cost (30 days)
-        </Typography>
-        <Typography
-          sx={{ fontSize: "15px", fontWeight: 800, color: "#1ed760" }}
-        >
+        <Typography sx={totalCardLabelSx}>Total cost (30 days)</Typography>
+        <Typography sx={totalCardValueSx}>
           {total30 === null ? "—" : `$${total30.toFixed(2)}`}
         </Typography>
       </Box>

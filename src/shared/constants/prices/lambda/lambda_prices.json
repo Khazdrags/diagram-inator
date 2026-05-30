@@ -1,0 +1,16 @@
+{
+  "on_demand": {
+    "x86": {
+      "price_per_gb_second": 0.0000166667,
+      "price_per_million_requests": 0.2
+    },
+    "arm": {
+      "price_per_gb_second": 0.0000133334,
+      "price_per_million_requests": 0.2
+    }
+  },
+  "free_tier": {
+    "gb_seconds_per_month": 400000,
+    "requests_per_month": 1000000
+  }
+}

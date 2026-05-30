@@ -1,6 +1,7 @@
 import BedrockNode from "./BedrockNode";
 import DefaultNode from "./DefaultNode";
 import EC2Node from "./EC2Node";
+import LambdaNode from "./LambdaNode";
 import ServiceNode from "./ServiceNode";
 
 /**
@@ -12,4 +13,5 @@ export const nodeTypes = {
   service: ServiceNode,
   ec2: EC2Node,
   bedrock: BedrockNode,
+  lambda: LambdaNode,
 };

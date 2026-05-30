@@ -1,11 +1,11 @@
 import { createContext, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
-import metaPrices from "../../shared/constants/meta_prices.json";
-import openaiPrices from "../../shared/constants/openai_prices.json";
-import anthropicPrices from "../../shared/constants/anthropic_prices.json";
-import googlePrices from "../../shared/constants/google_prices.json";
-import mistralPrices from "../../shared/constants/mistral_prices.json";
-import qwenPrices from "../../shared/constants/qwen_prices.json";
+import metaPrices from "../../shared/constants/prices/llm/meta_prices.json";
+import openaiPrices from "../../shared/constants/prices/llm/openai_prices.json";
+import anthropicPrices from "../../shared/constants/prices/llm/anthropic_prices.json";
+import googlePrices from "../../shared/constants/prices/llm/google_prices.json";
+import mistralPrices from "../../shared/constants/prices/llm/mistral_prices.json";
+import qwenPrices from "../../shared/constants/prices/llm/qwen_prices.json";
 
 const BedrockDataContext = createContext(null);
 
